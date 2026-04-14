@@ -1,0 +1,40 @@
+classdef R1_PF_MTSO3_110_145 < Problem
+% <Multi-task> <Single-objective> <None>
+
+methods
+    function Prob = R1_PF_MTSO3_110_145(varargin)
+        % 调用父类构造函数
+        Prob = Prob@Problem(varargin);
+        Prob.maxFE = 2 * 50 * 1000;
+        Prob.N = 50;
+    end
+
+    function setTasks(Prob)
+        Prob.T = 2;
+        Prob.M = [1, 1];
+        Prob.D = [284, 179];
+        Prob.Lb{1} = zeros(1, Prob.D(1));
+        Prob.Ub{1} = ones(1, Prob.D(1));
+        Prob.Lb{2} = zeros(1, Prob.D(2));
+        Prob.Ub{2} = ones(1, Prob.D(2));
+        Prob.Fnc{1} = @(x)TaskWrapper(x, 1);
+        Prob.Fnc{2} = @(x)TaskWrapper(x, 2);
+    end 
+end
+end
+
+
+function [Obj, Con] = TaskWrapper(x, taskIdx)
+    % （保持原有包装函数不变）
+    Obj = zeros(size(x, 1), 1);
+    py.sys.path().append('Problems/PianoFingering/R1/Tasks');
+    MTSO3 = py.importlib.import_module('MTPFcase3'); 
+    py.importlib.reload(MTSO3);
+    for i = 1:size(x, 1)
+        y = py.numpy.array(x(i, :), dtype = py.numpy.float32);
+        Obj(i) = double(MTSO3.task_fit(y, taskIdx));
+    end
+    py.gc.collect();
+    clear py;
+    Con = zeros(size(x, 1), 1);
+    end    
