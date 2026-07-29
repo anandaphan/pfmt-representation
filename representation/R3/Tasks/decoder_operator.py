@@ -72,7 +72,7 @@ def controlled_softmax_decoder(nNotes, vec, tau):
     key = topk_sample_to_keys(nNotes, vec_softmax)
     return key, nNotes
 
-def k_block_decoder(nNotes, vec):
+def sequential_selection_wo_replace(nNotes, vec):
     key = np.empty_like(nNotes)
     offset = np.cumsum(nNotes)[:-1]
     vec_parts = np.split(vec, offset)
