@@ -606,12 +606,12 @@ class FingeringTask(object):
 
         if decoder_type == "threshold_decoder":            # PF_baseline
             self.decoder = threshold_decoder
-        elif decoder_type == "priority_based_decoder":     # PFB1
-            self.decoder = priority_based_decoder
+        elif decoder_type == "topk_truncation_mapping":     # PFB1
+            self.decoder = topk_truncation_mapping
         elif decoder_type == "controlled_softmax_decoder": # PFB2
             self.decoder = controlled_softmax_decoder
-        elif decoder_type == "k_block_decoder":            # PFB3
-            self.decoder = k_block_decoder
+        elif decoder_type == "sequential_selection_wo_replace":            # PFB3
+            self.decoder = sequential_selection_wo_replace
         elif decoder_type == "relaxation_with_threshold":
             self.decoder = relaxation_with_threshold
         else:

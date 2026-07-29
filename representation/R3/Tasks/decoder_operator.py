@@ -55,7 +55,7 @@ def topk_sample_to_keys(nNotes, vec):
         key[i] = utils.finger2key[tuple(np.sort(vec[i,-k:]))]
     return key
 
-def priority_based_decoder(nNotes, vec):
+def topk_truncation_mapping(nNotes, vec):
     # each chromosome as the score of the finger
     # Direct top-k
     vec_ = vec.reshape(len(nNotes),5)
@@ -87,7 +87,6 @@ def k_block_decoder(nNotes, vec):
         key[i] = utils.finger2key[tuple(set(decoded))]
     return key, nNotes
 
-
 def relaxation_with_threshold(nNotes, vec, threshold = 0.5):
     nNotesDecoded = np.zeros_like(nNotes)
     vec_ = vec.reshape(len(nNotes),5)
@@ -109,8 +108,5 @@ def decoder_latent(nNotes,z):
     z_ = z.reshape(len(nNotes),2)
     key = np.empty_like(nNotes)
     nNotesDecoded = np.zeros_like(nNotes)   
-
-
     return key, nNotesDecoded
-    
     

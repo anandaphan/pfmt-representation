@@ -2,8 +2,8 @@
 # 110 and 145
 import FingeringTask as FTask
 
-task_1 = FTask.FingeringTask("./PIG/110-1_fingering.txt", decoder_type="priority_based_decoder")
-task_2 = FTask.FingeringTask("./PIG/145-1_fingering.txt", decoder_type="priority_based_decoder")
+task_1 = FTask.FingeringTask("./PIG/110-1_fingering.txt", decoder_type="topk_truncation_mapping")
+task_2 = FTask.FingeringTask("./PIG/145-1_fingering.txt", decoder_type="topk_truncation_mapping")
 
 def task_fit(vec, i):
     if i == 1:

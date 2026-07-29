@@ -57,7 +57,7 @@ def topk_sample_to_keys(nNotes, vec):
         key[i] = utils.finger2key[tuple(np.sort(vec[i,-k:]))]
     return key
 
-def priority_based_decoder(nNotes, vec):
+def topk_truncation_mapping(nNotes, vec):
     vec_ = vec.reshape(len(nNotes),5)
     vec_ = np.argsort(vec_,axis=1)
     key = topk_sample_to_keys(nNotes, vec_)
@@ -71,7 +71,7 @@ def controlled_softmax_decoder(nNotes, vec, tau):
     key = topk_sample_to_keys(nNotes, vec_softmax)
     return key, nNotes
 
-def k_block_decoder(nNotes, vec):
+def sequential_selection_wo_replace(nNotes, vec):
     key = np.empty_like(nNotes)
     offset = np.cumsum(nNotes)[:-1]
     vec_parts = np.split(vec, offset)
