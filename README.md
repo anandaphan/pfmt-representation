@@ -5,7 +5,7 @@ This repository contains the code supplementary to the paper:
 
 Paper : [link](https://doi.org/10.1109/CEC69861.2026.11727126)
 
-If you use this code, in whole or in part, in your research, please cite our paper:
+If you use this code in whole or part of your research, please cite our paper:
 ```text
 @inproceedings{iman2026diagnosing,
   author    = {Iman, Ananda Phan and Wei, Tingyang and Ahn, Chang Wook},
@@ -13,7 +13,7 @@ If you use this code, in whole or in part, in your research, please cite our pap
   booktitle = {2026 IEEE Congress on Evolutionary Computation (CEC)},
   year      = {2026},
   pages     = {1--8},
-  keywords={Multitasking;Optimization;Fingers;Printing;Algorithms;Knowledge transfer;Autocorrelation;Encoding;Music;Decoding;Art and music;Multi-task optimization;Fitness landscape analysis;Continuous relaxation;Subset selection},
+  keywords  = {Multitasking;Optimization;Fingering;Algorithms;Knowledge transfer;Autocorrelation;Encoding;Music;Decoding;Art and music;Multi-task optimization;Fitness landscape analysis;Continuous relaxation;Subset selection},
   doi       = {10.1109/CEC69861.2026.11727126}
 }
 ```
@@ -57,7 +57,10 @@ Alternatively, follow this [Documentation](https://www.mathworks.com/help/matlab
 
 ## 2. Usage
 ### Main Experiment
-To run the experiment, follow these steps:
+
+Pieces come from the PIG dataset. Its license does not allow redistribution, so you must download it yourself (free registration)
+
+Therefore to run the experiment, follow these steps:
 1. Download the fingering dataset from [PIG Dataset](https://beam.kisarazu.ac.jp/~saito/research/PianoFingeringDataset/) and place the .txt files inside each folder at "[Rep ID]/Tasks/PIG",
 2. Clone the [MTO-Platform (MToP)](https://github.com/intLyc/MTO-Platform) 
 3. Copy each representation folder from "representation/[Rep ID]" into MToP directory  "MTO/Problems/PianoFingering/"
