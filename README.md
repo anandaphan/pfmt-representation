@@ -1,7 +1,22 @@
 # Piano Fingering Representation in Evolutionary Multitasking Optimization
 This repository contains the code supplementary to the paper:
 
-**Diagnosing Optimizer-Landscape Interaction via Representation in Subset Selection Multitasking: Evidence from Piano Fingering**
+[**Diagnosing Optimizer-Landscape Interaction via Representation in Subset Selection Multitasking: Evidence from Piano Fingering**](https://doi.org/10.1109/CEC69861.2026.11727126)
+
+Paper : [link](https://doi.org/10.1109/CEC69861.2026.11727126)
+
+If you use this code, in whole or in part, in your research, please cite our paper:
+```text
+@inproceedings{iman2026diagnosing,
+  author    = {Iman, Ananda Phan and Wei, Tingyang and Ahn, Chang Wook},
+  title     = {Diagnosing Optimizer-Landscape Interaction via Representation in Subset Selection Multitasking: Evidence from Piano Fingering},
+  booktitle = {2026 IEEE Congress on Evolutionary Computation (CEC)},
+  year      = {2026},
+  pages     = {1--8},
+  keywords={Multitasking;Optimization;Fingers;Printing;Algorithms;Knowledge transfer;Autocorrelation;Encoding;Music;Decoding;Art and music;Multi-task optimization;Fitness landscape analysis;Continuous relaxation;Subset selection},
+  doi       = {10.1109/CEC69861.2026.11727126}
+}
+```
 
 
 ## Overview
